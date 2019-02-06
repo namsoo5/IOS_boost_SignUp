@@ -1,9 +1,9 @@
 # SignUp Form
 - View
-    - 메인 - [ViewController](##ViewController)
-    - form1 - [SignFormViewController](##SignFormViewController)
-    - form2 - [SignForm2ViewController](##SignForm2ViewController)
-    - login - [LoginViewController](##LoginViewController)
+    - 메인 - [ViewController](#ViewController)
+    - form1 - [SignFormViewController](#SignFormViewController)
+    - form2 - [SignForm2ViewController](#SignForm2ViewController)
+    - login - [LoginViewController](#LoginViewController)
 - 주요기능
     - ImagePicker
     - DatePicker
