@@ -24,6 +24,10 @@ class SignFormViewController: UIViewController, UIImagePickerControllerDelegate,
         super.viewDidLoad()
        
     }
+    //cancel
+    @IBAction func cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     //다음버튼 클릭시
     @IBAction func bt_next(_ sender: UIButton) {
@@ -31,7 +35,8 @@ class SignFormViewController: UIViewController, UIImagePickerControllerDelegate,
         UserInformation.shared.pw = pwtextField.text
         UserInformation.shared.check = checktextField.text
         UserInformation.shared.text = textView.text
-
+        
+        //navigation이용하여 다음화면으로(인터페이스 빌더이용)
     }
     
     //pw나 check 입력후 실행
@@ -81,7 +86,6 @@ class SignFormViewController: UIViewController, UIImagePickerControllerDelegate,
         textField.resignFirstResponder()
         return true
     }
-    
     
     
     

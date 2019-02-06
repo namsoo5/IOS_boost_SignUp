@@ -11,10 +11,12 @@ import UIKit
 class SignForm2ViewController: UIViewController {
 
     @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var birthLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     //시간형식지정
+    
     let dateformat: DateFormatter = {
         let format: DateFormatter = DateFormatter()
         format.dateStyle = .long
@@ -27,10 +29,13 @@ class SignForm2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //초기시간설정
-        let date:Date = Date()
-        let dateString:String = dateformat.string(from: date)
-        self.birthLabel.text = dateString
+    }
+    
+    //날짜 초기값
+    override func viewWillAppear(_ animated: Bool) {
+        let date: Date = Date()  //오늘날짜로 설정
+        let dateString = dateformat.string(from: date)
+        dateLabel.text = dateString
         
     }
     
@@ -46,7 +51,7 @@ class SignForm2ViewController: UIViewController {
     @IBAction func signupButton(_ sender: Any) {
         //폰번호 생년월일저장
         UserInformation.shared.phone = phoneTextField.text
-        UserInformation.shared.date = birthLabel.text
+        UserInformation.shared.date = dateLabel.text
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -54,7 +59,7 @@ class SignForm2ViewController: UIViewController {
     @IBAction func datePicker(_ sender: UIDatePicker) {
         let date:Date = sender.date
         let dateString: String = self.dateformat.string(from: date)
-        self.birthLabel.text = dateString
+        self.dateLabel.text = dateString
         self.signupButton.isEnabled = true
     }
     

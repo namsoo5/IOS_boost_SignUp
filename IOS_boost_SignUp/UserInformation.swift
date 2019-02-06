@@ -16,5 +16,5 @@ class UserInformation {
     var check: String?
     var text: String?
     var date: String?
-    var phone: String?
+    var phone: String? = ""
 }
