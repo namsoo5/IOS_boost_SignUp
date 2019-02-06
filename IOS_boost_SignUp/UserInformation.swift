@@ -15,4 +15,6 @@ class UserInformation {
     var pw: String?
     var check: String?
     var text: String?
+    var date: String?
+    var phone: String?
 }

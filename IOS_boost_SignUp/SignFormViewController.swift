@@ -1,7 +1,7 @@
 
 import UIKit
 
-class SignFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignFormViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate  {
 
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwtextField: UITextField!
@@ -10,7 +10,7 @@ class SignFormViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var imgButton: UIButton!
     
-    
+    //이미지선택클릭시 해당코드 실행
     lazy var imagePicker: UIImagePickerController = {
         let picker: UIImagePickerController = UIImagePickerController()
         picker.sourceType = .photoLibrary  //앨범
@@ -25,13 +25,12 @@ class SignFormViewController: UIViewController, UIImagePickerControllerDelegate,
        
     }
     
+    //다음버튼 클릭시
     @IBAction func bt_next(_ sender: UIButton) {
         UserInformation.shared.id = idTextField.text
         UserInformation.shared.pw = pwtextField.text
         UserInformation.shared.check = checktextField.text
         UserInformation.shared.text = textView.text
-
-        self.dismiss(animated: false, completion: nil)
 
     }
     
@@ -71,6 +70,18 @@ class SignFormViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         self.dismiss(animated: true, completion: nil)
     }
+    
+    //키보드내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //키보드 done클릭시 키보드내리기
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     
     
     
