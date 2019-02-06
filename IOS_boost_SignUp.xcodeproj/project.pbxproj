@@ -46,7 +46,6 @@
 		1BF73277220A7CEB00AC3A74 = {
 			isa = PBXGroup;
 			children = (
-				1BF7329B220AD40E00AC3A74 /* LoginViewController.swift */,
 				1BF73282220A7CEB00AC3A74 /* IOS_boost_SignUp */,
 				1BF73281220A7CEB00AC3A74 /* Products */,
 			);
@@ -63,6 +62,7 @@
 		1BF73282220A7CEB00AC3A74 /* IOS_boost_SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				1BF7329B220AD40E00AC3A74 /* LoginViewController.swift */,
 				1BF73283220A7CEB00AC3A74 /* AppDelegate.swift */,
 				1BF73285220A7CEB00AC3A74 /* ViewController.swift */,
 				1BF73287220A7CEB00AC3A74 /* Main.storyboard */,
